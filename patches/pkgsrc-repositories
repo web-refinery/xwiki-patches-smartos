@@ -1,0 +1,8 @@
+--- /opt/local/etc/pkgin/repositories.conf      2020-10-01 15:00:24.000000000 +0000
++++ repositories.conf   2021-01-04 18:14:03.157267556 +0000
+@@ -23,4 +23,4 @@
+ #
+ # file:///usr/pkgsrc/packages/All
+ #
+-https://pkgsrc.joyent.com/packages/SmartOS/2020Q3/x86_64/All
++https://pkgsrc.smartos.skylime.net/packages/SmartOS/2020Q3/x86_64/All

@@ -1,0 +1,30 @@
+--- /var/tomcat/webapps/ROOT/WEB-INF/web.xml	2020-12-28 15:28:56.000000000 +0000
++++ web.xml	2021-01-04 19:20:30.575811482 +0000
+@@ -316,6 +316,11 @@
+     <url-pattern>/redirect</url-pattern>
+   </servlet-mapping>
+ 
++  <servlet-mapping>
++    <servlet-name>action</servlet-name>
++    <url-pattern>/*</url-pattern>
++  </servlet-mapping>
++
+   <!-- We override the mime type definition for javascript and css files, as some containers don't
+        provide it, causing problems for javascript files containg velocity code, like
+        fullscreen.js -->
+@@ -384,14 +389,13 @@
+     <location>/bin/view/Main/DocumentDoesNotExist</location>
+   </error-page>
+ 
+-  <!-- Uncomment if you wish to use a DataSource to define the Database connection
++  <!-- Uncomment if you wish to use a DataSource to define the Database connection -->
+   <resource-ref>
+     <description>DB Connection</description>
+     <res-ref-name>jdbc/XWikiDS</res-ref-name>
+     <res-type>javax.sql.DataSource</res-type>
+     <res-auth>Container</res-auth>
+   </resource-ref>
+-  -->
+ 
+   <!-- Uncomment if you wish to overwrite the default xwiki.cfg location or bypass the /etc/xwiki/xwiki.cfg step
+   <env-entry>

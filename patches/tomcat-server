@@ -1,0 +1,31 @@
+--- /var/tomcat/conf/server.xml	2021-01-04 18:24:25.341109239 +0000
++++ server.xml	2021-01-04 18:39:34.055258075 +0000
+@@ -68,7 +68,12 @@
+     -->
+     <Connector port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
+-               redirectPort="8443" />
++               redirectPort="8443"
++	       compression="on"
++	       compressionMinSize="2048"
++	       compressibleMimeType="text/html,text/xml,text/css,text/javascript,application/x-javascript"
++	       maxParameterCount="10000" />
++
+     <!-- A "Connector" using the shared thread pool-->
+     <!--
+     <Connector executor="tomcatThreadPool"
+@@ -161,8 +166,14 @@
+         <!-- Access log processes all example.
+              Documentation at: /docs/config/valve.html
+              Note: The pattern used is equivalent to using pattern="common" -->
++	<Valve className="org.apache.catalina.valves.RemoteIpValve"
++	       remoteIpHeader="X-Real-IP"
++	       requestAttributesEnabled="true"
++	       internalProxies="127\.0\.0\.1"  />
++
+         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                prefix="localhost_access_log" suffix=".txt"
++	       requestAttributesEnabled="true"
+                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+ 
+       </Host>

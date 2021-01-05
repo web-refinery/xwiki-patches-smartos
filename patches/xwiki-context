@@ -1,0 +1,15 @@
+--- /var/tomcat/webapps/ROOT/META-INF/context.xml	2020-12-28 15:28:56.000000000 +0000
++++ context.xml	2021-01-04 18:57:53.440301989 +0000
+@@ -34,4 +34,12 @@
+   <!-- We need to set the resource cache size since the default (10K) is too small for loading all XWiki resources at
+        once -->
+   <Resources cacheMaxSize="32768" />
++  <Resource name="jdbc/XWikiDS" auth="Container"
++            type="javax.sql.DataSource"
++	    driverClassName="org.postgresql.Driver"
++	    url="jdbc:postgresql://127.0.0.1:5432/xwiki"
++	    username="xwiki"
++	    password="$PASSWORD"
++	    removeAbandonedOnBorrow="true"
++	    removeAbandonedOnMaintenance="true" />
+ </Context>

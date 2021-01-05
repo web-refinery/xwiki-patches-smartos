@@ -1,0 +1,25 @@
+--- /var/tomcat/webapps/ROOT/WEB-INF/xwiki.cfg	2020-12-28 15:51:22.000000000 +0000
++++ xwiki.cfg	2021-01-04 19:17:53.287141625 +0000
+@@ -249,7 +249,8 @@
+ #-# instance.
+ #-# For example:
+ #-# xwiki.webapppath=xwiki
+-# xwiki.webapppath=
++xwiki.webapppath=
++
+ #-# The default servlet mapping name to use in the generated URLs. The right value is taken from the request URL,
+ #-# preserving the requested servlet mapping, so setting this is not recommended in most cases. If set, the value should
+ #-# contain a trailing /, but not a leading one. For example:
+@@ -259,9 +260,12 @@
+ #-# when the correct setting could not be determined from the request URL. A good way to use this setting is to achieve
+ #-# short URLs, see https://www.xwiki.org/xwiki/bin/view/Documentation/AdminGuide/ShortURLs/
+ # xwiki.defaultservletpath=bin/
++xwiki.defaultservletpath=
+ 
+ #-# Whether the /view/ part of the URL should be included if the target action is 'view'.
+ # xwiki.showviewaction=1
++xwiki.showviewaction=0
++
+ #-# The name of the default space. This is displayed when the URL specifies a document, but not a space, or neither.
+ # xwiki.defaultweb=Main
+ #-# The name of the default page of a space. This is displayed when the URL specifies a space, but not a document, or

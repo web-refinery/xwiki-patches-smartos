@@ -1,0 +1,27 @@
+--- /var/tomcat/webapps/ROOT/WEB-INF/xwiki.properties	2020-12-28 15:51:22.000000000 +0000
++++ xwiki.properties	2021-01-04 19:15:15.576101878 +0000
+@@ -89,6 +89,7 @@
+ #-# directory is used; This is absolutely not recommended since that directory could be wiped out at any time and you
+ #-# should specify a value.
+ # environment.permanentDirectory = /var/lib/xwiki/data/
++environment.permanentDirectory = /opt/local/var/xwiki/data/
+ 
+ #-------------------------------------------------------------------------------------
+ # Rendering
+@@ -691,6 +692,7 @@
+ #-#
+ #-# The default is:
+ # url.standard.entityPathPrefix=bin
++url.standard.entityPathPrefix=
+ 
+ #-# [Since 5.3M1]
+ #-# The action to take when a subwiki is not found (ie there's no wiki descriptor for it). Valid values are:
+@@ -706,6 +708,8 @@
+ #-#
+ #-# The default is:
+ # url.standard.hideViewAction=false
++url.standard.hideViewAction=true
++url.standard.getEntityPathPrefix=
+ 
+ #-# [Since 11.1RC1]
+ #-# Whether a the last modified date of the file to be loaded should be checked and put in the URL query parameter.
